@@ -25,15 +25,13 @@
             scene = new THREE.Scene();
             camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 10000);
             camera.position.z = 1000;
-
-            // 创建更复杂的几何体
             var geometries = [
-                new THREE.BoxGeometry(20, 20, 20, 50, 50, 50), // 增加细分级别
-                new THREE.SphereGeometry(15, 128, 128), // 增加细分级别
-                new THREE.CylinderGeometry(5, 5, 20, 64, 20), // 增加细分级别
+                new THREE.BoxGeometry(20, 20, 20, 50, 50, 50), 
+                new THREE.SphereGeometry(15, 128, 128), 
+                new THREE.CylinderGeometry(5, 5, 20, 64, 20), 
                 new THREE.TorusGeometry(10, 3, 64, 100),
                 new THREE.DodecahedronGeometry(15),
-                new THREE.IcosahedronGeometry(15, 4) // 增加细分级别
+                new THREE.IcosahedronGeometry(15, 4) 
             ];
 
             material = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.4, metalness: 0.6 });
@@ -75,8 +73,8 @@
 
             scene.traverse(function(object) {
                 if (object instanceof THREE.Mesh) {
-                    object.rotation.x += 0.01; // 减少旋转速度以突出细节
-                    object.rotation.y += 0.01; // 减少旋转速度以突出细节
+                    object.rotation.x += 0.01; 
+                    object.rotation.y += 0.01; 
                 }
             });
 
